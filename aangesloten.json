@@ -1,0 +1,22 @@
+{
+  "trial": {
+    "controle": {
+      "aangesloten_door": "MarkVeurink-mrng",
+      "aangesloten_op": "2026-11-20",
+      "bot_login": "svc_ai_bga_controle",
+      "database": "mrng-admin-mveu-trial-staging-mveu-trial-17-42113810",
+      "uid": 6,
+      "url": "https://mrng-admin-mveu-trial-staging-mveu-trial-17-42113810.dev.odoo.com",
+      "verloopt": "2026-12-15"
+    },
+    "inrichting": {
+      "aangesloten_door": "MarkVeurink-mrng",
+      "aangesloten_op": "2026-11-20",
+      "bot_login": "svc_ai_bga",
+      "database": "mrng-admin-mveu-trial-staging-mveu-trial-17-42113810",
+      "uid": 5,
+      "url": "https://mrng-admin-mveu-trial-staging-mveu-trial-17-42113810.dev.odoo.com",
+      "verloopt": "2026-12-14"
+    }
+  }
+}

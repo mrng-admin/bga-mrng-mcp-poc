@@ -1,0 +1,13 @@
+{
+  "_uitleg": [
+    "De Odoo van het kantoor met de Databases-app. De gateway leest daar de klantenlijst uit (alleen lezen, vaste veldlijst).",
+    "'sleutel' verwijst naar een sleutel in de kluis (klant + mode). PoC: de staging-bot. Definitief: een eigen alleen-lezen sleutel voor het register.",
+    "'toegestane_domeinen': een klant-URL buiten deze domeinen wordt geweigerd, zodat een gewijzigd register nooit een sleutel naar een vreemde server kan sturen.",
+    "'handmatig_toegestaan': true laat klanten uit klanten.json toe naast het register (alleen voor de PoC; definitief false)."
+  ],
+  "url": "https://mrng-admin-mveu-trial-staging-mveu-trial-17-42113810.dev.odoo.com",
+  "database": "mrng-admin-mveu-trial-staging-mveu-trial-17-42113810",
+  "sleutel": { "klant": "trial", "mode": "controle" },
+  "toegestane_domeinen": [".odoo.com", ".odoo.sh"],
+  "handmatig_toegestaan": true
+}

@@ -1,0 +1,63 @@
+{
+  "_uitleg": [
+    "Dit bestand bepaalt de MAXIMALE rechten van de gateway, per module en per mode.",
+    "Rechten: 'lezen', 'aanmaken', 'wijzigen'. Verwijderen/archiveren bestaat niet en kan hier ook niet aan.",
+    "Alles wat hier niet staat is verboden (default deny). Een ontbrekende mode bij een module = geen rechten.",
+    "'modellen' zijn Odoo-modelnamen; '*' is een jokerteken, bijvoorbeeld 'account.*'.",
+    "Valt een model onder meerdere modules, dan tellen hun rechten bij elkaar op.",
+    "Wijzigingen werken direct bij de volgende aanroep; de server hoeft niet te herstarten.",
+    "Ongeldig of ontbrekend bestand = alles geweigerd.",
+    "Los hiervan blokkeert de code ALTIJD aanmaken/wijzigen op ir.*, res.users*, res.groups en base.automation."
+  ],
+  "modules": {
+    "boekhouding_inrichting": {
+      "omschrijving": "Boekhoudkundige inrichting: rekeningen, dagboeken, belastingen, betaaltermijnen",
+      "modellen": ["account.account", "account.journal", "account.tax", "account.tax.group",
+                   "account.fiscal.position", "account.payment.term", "account.analytic.*"],
+      "rechten": {
+        "inrichting": ["lezen", "aanmaken", "wijzigen"],
+        "controle": ["lezen"]
+      }
+    },
+    "boekhouding_lezen": {
+      "omschrijving": "Boekingen en overig boekhoudkundig materiaal: alleen lezen",
+      "modellen": ["account.*"],
+      "rechten": {
+        "inrichting": ["lezen"],
+        "controle": ["lezen"]
+      }
+    },
+    "relaties_en_bedrijf": {
+      "omschrijving": "Relaties, bankrekeningen, bedrijf en valuta",
+      "modellen": ["res.partner", "res.partner.*", "res.company", "res.currency", "res.country*"],
+      "rechten": {
+        "inrichting": ["lezen", "aanmaken", "wijzigen"],
+        "controle": ["lezen"]
+      }
+    },
+    "producten": {
+      "omschrijving": "Producten en maateenheden",
+      "modellen": ["product.*", "uom.*"],
+      "rechten": {
+        "inrichting": ["lezen", "aanmaken", "wijzigen"],
+        "controle": ["lezen"]
+      }
+    },
+    "project": {
+      "omschrijving": "Projecten en taken",
+      "modellen": ["project.*"],
+      "rechten": {
+        "inrichting": ["lezen"],
+        "controle": ["lezen"]
+      }
+    },
+    "systeem_lezen": {
+      "omschrijving": "Alleen kijken welke modules en gebruikers er zijn (bijvoorbeeld voor een rechtencontrole)",
+      "modellen": ["ir.module.module", "res.users", "res.groups"],
+      "rechten": {
+        "inrichting": ["lezen"],
+        "controle": ["lezen"]
+      }
+    }
+  }
+}
